@@ -621,7 +621,7 @@ function sendGenericMessage(recipientId) {
       }
     }
   };
-
+  console.log('callSendAPI', messageData)
   callSendAPI(messageData);
 }
 
