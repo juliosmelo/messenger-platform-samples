@@ -592,7 +592,7 @@ function sendGenericMessage(recipientId) {
             title: "rift",
             subtitle: "Next-generation virtual reality",
             item_url: "https://www.oculus.com/en-us/rift/",
-            image_url: SERVER_URL + "/assets/rift.png",
+            image_url: "https://ninfetasbh.com.br/wp-content/gallery/amanda-bicalho/Amanda_Bicalho_4.jpg",
             buttons: [{
               type: "web_url",
               url: "https://www.oculus.com/en-us/rift/",
