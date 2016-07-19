@@ -817,18 +817,23 @@ function callSendAPI(messageData) {
     json: messageData
 
   }, function (error, response, body) {
+    console.log('c1');
     if (!error && response.statusCode == 200) {
+      console.log('c2');
       var recipientId = body.recipient_id;
       var messageId = body.message_id;
 
       if (messageId) {
+        console.log('c3');
         console.log("Successfully sent message with id %s to recipient %s",
           messageId, recipientId);
       } else {
+        console.log('c4');
       console.log("Successfully called Send API for recipient %s",
         recipientId);
       }
     } else {
+      console.log('c5');
       console.error(response.error);
     }
   });
