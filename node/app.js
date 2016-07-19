@@ -285,7 +285,7 @@ function receivedMessage(event) {
 
       case 'generic':
       console.log('d8');
-      console.lgo('d8 denserID', senderID);
+      console.log('d8 denserID', senderID);
         sendGenericMessage(senderID);
         break;
 
