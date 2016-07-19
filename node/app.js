@@ -216,7 +216,6 @@ function receivedAuthentication(event) {
  *
  */
 function receivedMessage(event) {
-  console.log('EVENT debbug', event);
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
   var timeOfMessage = event.timestamp;
@@ -224,7 +223,7 @@ function receivedMessage(event) {
 
   console.log("Received message for user %d and page %d at %d with message:",
     senderID, recipientID, timeOfMessage);
-  console.log(JSON.stringify(message));
+  console.log('msg stringify', JSON.stringify(message));
 
   var isEcho = message.is_echo;
   var messageId = message.mid;
