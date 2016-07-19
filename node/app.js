@@ -833,7 +833,7 @@ function callSendAPI(messageData) {
         recipientId);
       }
     } else {
-      console.log('c5');
+      console.log('c5', response);
       console.error(response.error);
     }
   });
