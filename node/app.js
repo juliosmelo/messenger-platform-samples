@@ -223,7 +223,7 @@ function receivedMessage(event) {
 
   console.log("Received message for user %d and page %d at %d with message:",
     senderID, recipientID, timeOfMessage);
-  console.log('msg stringify', JSON.stringify(message));
+  console.log(JSON.stringify(message));
 
   var isEcho = message.is_echo;
   var messageId = message.mid;
@@ -234,27 +234,30 @@ function receivedMessage(event) {
   var messageText = message.text;
   var messageAttachments = message.attachments;
   var quickReply = message.quick_reply;
-
+  console.log('d1');
   if (isEcho) {
     // Just logging message echoes to console
     console.log("Received echo for message %s and app %d with metadata %s",
       messageId, appId, metadata);
+      console.log('d2');
     return;
   } else if (quickReply) {
+    console.log('d3');
     var quickReplyPayload = quickReply.payload;
     console.log("Quick reply for message %s with payload %s",
       messageId, quickReplyPayload);
-
     sendTextMessage(senderID, "Quick reply tapped");
+    console.log('d4');
     return;
   }
-
+  console.log('d5');
   if (messageText) {
-
+    console.log('d6');
     // If we receive a text message, check to see if it matches any special
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     switch (messageText) {
+      console.log('d7');
       case 'image':
         sendImageMessage(senderID);
         break;
@@ -280,6 +283,7 @@ function receivedMessage(event) {
         break;
 
       case 'generic':
+      console.log('d8');
         sendGenericMessage(senderID);
         break;
 
