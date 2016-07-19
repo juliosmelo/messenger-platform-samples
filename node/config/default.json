@@ -1,6 +1,6 @@
 {
-    "appSecret": "",
+    "appSecret": "e50afa18e5adb711f8a95b09e916f53f",
     "pageAccessToken": "EAADJZAd6qyGIBANTrAerS2kSLf4cRyAA39BVTELYXCu0qaXMBuQiPYaTDXEDt7wrv2BHUYtzodeLasBcllpWQfjjZA7ZCnBQmz6HrawNZAOZC94VYu9CcVx44v5IuBg6Wn491dXwOAhhpXOcZAS5JpkrNn1f1aMQsCZBZBMpZAcUPDAZDZD",
-    "validationToken": "",
-    "serverURL": ""
+    "validationToken": "bd01b0c436cbf4b078c1dc6657776007",
+    "serverURL": "https://getmodels.findtruck.co"
 }
