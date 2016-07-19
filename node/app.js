@@ -234,32 +234,27 @@ function receivedMessage(event) {
   var messageText = message.text;
   var messageAttachments = message.attachments;
   var quickReply = message.quick_reply;
-  console.log('d1');
   if (isEcho) {
     // Just logging message echoes to console
     console.log("Received echo for message %s and app %d with metadata %s",
       messageId, appId, metadata);
-      console.log('d2');
     return;
   } else if (quickReply) {
-    console.log('d3');
     var quickReplyPayload = quickReply.payload;
     console.log("Quick reply for message %s with payload %s",
       messageId, quickReplyPayload);
     sendTextMessage(senderID, "Quick reply tapped");
-    console.log('d4');
     return;
   }
-  console.log('d5');
+
   if (messageText) {
-    console.log('d6');
+
     // If we receive a text message, check to see if it matches any special
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     switch (messageText) {
 
       case 'image':
-      console.log('d7');
         sendImageMessage(senderID);
         break;
 
@@ -284,8 +279,6 @@ function receivedMessage(event) {
         break;
 
       case 'generic':
-      console.log('d8');
-      console.log('d8 denserID', senderID);
         sendGenericMessage(senderID);
         break;
 
@@ -307,6 +300,18 @@ function receivedMessage(event) {
 
       case 'typing off':
         sendTypingOff(senderID);
+        break;
+
+      case 'ruivas':
+        sendRedHead(senderID);
+        break;
+
+      case 'loiras':
+        sendBlondes(senderID);
+        break;
+
+      case 'morenas':
+        sendBrunettes(senderID);
         break;
 
       case 'account linking':
@@ -589,14 +594,14 @@ function sendGenericMessage(recipientId) {
         payload: {
           template_type: "generic",
           elements: [{
-            title: "rift",
-            subtitle: "Next-generation virtual reality",
+            title: "Amanda Bicalho",
+            subtitle: "Atendo todos os dias da semana das 11:00h às 23:30h, Atendo em BH, Contagem e Betim. Atendo em Motel, Hotel ou na sua Residência. Atendo Homens, Mulheres e Casais.",
             item_url: "https://www.oculus.com/en-us/rift/",
             image_url: "https://ninfetasbh.com.br/wp-content/gallery/amanda-bicalho/Amanda_Bicalho_4.jpg",
             buttons: [{
               type: "web_url",
-              url: "https://www.oculus.com/en-us/rift/",
-              title: "Open Web URL"
+              url: "https://ninfetasbh.com.br/acompanhantes/amanda-bicalho/",
+              title: "Ver fotos"
             }, {
               type: "postback",
               title: "Call Postback",
@@ -621,7 +626,102 @@ function sendGenericMessage(recipientId) {
       }
     }
   };
-  console.log('callSendAPI', messageData)
+  callSendAPI(messageData);
+}
+
+function sendRedHead(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "Amanda Bicalho",
+            subtitle: "Atendo todos os dias da semana das 11:00h às 23:30h, Atendo em BH, Contagem e Betim. Atendo em Motel, Hotel ou na sua Residência. Atendo Homens, Mulheres e Casais.",
+            item_url: "https://ninfetasbh.com.br/acompanhantes/amanda-bicalho/",
+            image_url: "https://ninfetasbh.com.br/wp-content/gallery/amanda-bicalho/Amanda_Bicalho_4.jpg",
+            buttons: [{
+              type: "web_url",
+              url: "https://ninfetasbh.com.br/acompanhantes/amanda-bicalho/",
+              title: "Ver fotos"
+            }, {
+              type: "postback",
+              title: "Call Postback",
+              payload: "Payload for first bubble",
+            }],
+          }]
+        }
+      }
+    }
+  };
+  callSendAPI(messageData);
+}
+
+function sendBlondes(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "Anita Sanches",
+            subtitle: "Atendo todos os dias da semana das 12:00h às 23:30h, Atendo em BH, Contagem e Betim. Atendo em Motel, Hotel ou na sua Residência. Atendo Homens, Mulheres e Casais.",
+            item_url: "https://ninfetasbh.com.br/acompanhantes/anita-sanshes/",
+            image_url: "https://ninfetasbh.com.br/wp-content/gallery/anita-sanshes/Anita_Sanshes_3.jpg",
+            buttons: [{
+              type: "web_url",
+              url: "https://ninfetasbh.com.br/acompanhantes/anita-sanshes/",
+              title: "Ver fotos"
+            }, {
+              type: "postback",
+              title: "Call Postback",
+              payload: "Payload for first bubble",
+            }],
+          }]
+        }
+      }
+    }
+  };
+  callSendAPI(messageData);
+}
+
+function sendBrunettes(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "Dani Barbosa",
+            subtitle: "Atendo todos os dias da semana das 10:00h às 23:00h. Atendo em BH, Contagem e Betim. Atendo em Motel, Hotel ou na sua Residência. Atendo Homens, Mulheres e Casais. Sou totalmente Liberal.",
+            item_url: "https://ninfetasbh.com.br/acompanhantes/dani-barbosa/",
+            image_url: "https://ninfetasbh.com.br/wp-content/gallery/dani-barbosa/Dani_Barbosa_6.jpg",
+            buttons: [{
+              type: "web_url",
+              url: "https://ninfetasbh.com.br/acompanhantes/dani-barbosa/",
+              title: "Ver fotos"
+            }, {
+              type: "postback",
+              title: "Call Postback",
+              payload: "Payload for first bubble",
+            }],
+          }]
+        }
+      }
+    }
+  };
   callSendAPI(messageData);
 }
 
@@ -722,7 +822,6 @@ function sendQuickReply(recipientId) {
       ]
     }
   };
-
   callSendAPI(messageData);
 }
 
